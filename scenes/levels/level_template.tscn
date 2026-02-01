@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu6f7bhn6g276"]
+
+[ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="1_gr3xe"]
+[ext_resource type="PackedScene" uid="uid://deoormo2vm8wn" path="res://art/models/misc/default_cube.glb" id="2_ds0u5"]
+[ext_resource type="Script" uid="uid://crqgi73q4xanl" path="res://scripts/model.gd" id="3_4s5u3"]
+
+[node name="LevelX" type="Node3D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Top" type="Control" parent="UI"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.104167
+offset_bottom = -75.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI/Top"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+texture = ExtResource("1_gr3xe")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Top/TextureRect"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -75.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Bot" type="Control" parent="UI"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 3
+anchor_top = 0.895833
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="UI/Bot"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_gr3xe")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Bot/TextureRect"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="3DWorld" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="3DWorld"]
+transform = Transform3D(1, 0, 0, 0, 0.927256, 0.374429, 0, -0.374429, 0.927256, 0, 1.28915, 0.955352)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="3DWorld"]
+transform = Transform3D(1, 0, 0, 0, 0.849525, 0.527549, 0, -0.527549, 0.849525, 0, 0, 1.54209)
+
+[node name="default_cube" parent="3DWorld" instance=ExtResource("2_ds0u5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.873469, -3.20458)
+script = ExtResource("3_4s5u3")
+
+[node name="Cutscene" type="CanvasLayer" parent="."]
+
+[node name="DarkenShadow" type="ColorRect" parent="Cutscene"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Cutscene/DarkenShadow"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.583333
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CharacterTalk" type="ColorRect" parent="Cutscene/DarkenShadow/HBoxContainer"]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Cutscene/DarkenShadow/HBoxContainer/CharacterTalk"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Cao"
+
+[node name="Character" type="TextureRect" parent="Cutscene/DarkenShadow/HBoxContainer"]
+layout_mode = 2

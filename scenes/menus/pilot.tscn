@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://crx1lqke774f2"]
+
+[ext_resource type="Script" uid="uid://dtxmkqb2qfisu" path="res://scripts/pilot.gd" id="1_0e8ph"]
+[ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="1_nmus7"]
+
+[node name="Pilot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0e8ph")
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_top = 500
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 500
+
+[node name="Main" type="VBoxContainer" parent="SafeArea"]
+layout_mode = 2
+theme_override_constants/separation = 175
+
+[node name="Top" type="VBoxContainer" parent="SafeArea/Main"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Title" type="Label" parent="SafeArea/Main/Top"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Museum mystery"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="SafeArea/Main/Top"]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 54
+text = "Begin"
+
+[node name="Bottom" type="HBoxContainer" parent="SafeArea/Main"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="About" type="RichTextLabel" parent="SafeArea/Main/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Been struggling for a while now to figure out how exactly they work, to no avail. I've been trying to create three ColorRects on a window, with a slider between each of them. Additionally, I need only the center ColorRect to have a min size, so that the outer two can be completely minimized. My attempts have resulted in either none of them showing up at all, or only two of them showing up, with the left most box already minimized instead of appearing at it's initial size. I've spent a couple of days researching and trying a bunch of different methods to figure out how they work, but I feel like I haven't learned a thing. How do these containers work"
+scroll_active = false
+
+[node name="Logo1" type="TextureRect" parent="SafeArea/Main/Bottom"]
+layout_mode = 2
+texture = ExtResource("1_nmus7")
+
+[node name="Logo2" type="TextureRect" parent="SafeArea/Main/Bottom"]
+layout_mode = 2
+texture = ExtResource("1_nmus7")
+
+[connection signal="pressed" from="SafeArea/Main/Top/Start" to="." method="_on_start_pressed"]

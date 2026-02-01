@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://bi6ycu1u28p6o"]
+
+[ext_resource type="PackedScene" uid="uid://rs4du1sjuecp" path="res://art/models/lvl1_boginja/actual/Boginja-test.glb" id="1_4mqry"]
+[ext_resource type="Texture2D" uid="uid://7nvla3gud3ja" path="res://art/models/lvl1_boginja/actual/TEX/t_BaseColor.png" id="2_wjajb"]
+[ext_resource type="Texture2D" uid="uid://bu5jfytblsjj4" path="res://art/models/lvl1_boginja/actual/TEX/t_Height.png" id="3_uxut5"]
+[ext_resource type="Texture2D" uid="uid://bjq4v33gy8lo4" path="res://art/models/lvl1_boginja/actual/TEX/t_Normal.png" id="4_hth05"]
+[ext_resource type="Texture2D" uid="uid://cjd35skouhixd" path="res://art/models/lvl1_boginja/actual/TEX/t_Roughness.png" id="5_fgb0r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mac3"]
+albedo_texture = ExtResource("2_wjajb")
+roughness_texture = ExtResource("5_fgb0r")
+normal_enabled = true
+normal_texture = ExtResource("4_hth05")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_uxut5")
+
+[node name="Boginja-test2" instance=ExtResource("1_4mqry")]
+
+[node name="Boginja-test" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_6mac3")

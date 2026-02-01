@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdederl2ng15u"]
+
+[ext_resource type="Script" uid="uid://biltly3sphwec" path="res://scripts/main_menu.gd" id="1_a1iuf"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a1iuf")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.30397, 0.30397, 0.30397, 1)
+
+[node name="SafeArea" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Center" type="CenterContainer" parent="SafeArea"]
+layout_mode = 2
+
+[node name="Column" type="VBoxContainer" parent="SafeArea/Center"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Title" type="Label" parent="SafeArea/Center/Column"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Muzejska misterija"
+
+[node name="NewGame" type="Button" parent="SafeArea/Center/Column"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Nova igra"
+
+[node name="Continue" type="Button" parent="SafeArea/Center/Column"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Nastavi
+"
+
+[node name="Credits" type="Button" parent="SafeArea/Center/Column"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Zasluge"
+
+[node name="Artifacts" type="Button" parent="SafeArea/Center/Column"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Artefakti"
+
+[node name="Exit" type="Button" parent="SafeArea/Center/Column"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Izlaz"
+
+[node name="ConfirmNewGame" type="ConfirmationDialog" parent="SafeArea"]
+title = "Nova igra"
+size = Vector2i(659, 100)
+unresizable = true
+borderless = true
+extend_to_title = true
+ok_button_text = "Da"
+dialog_text = "Da li ste sigurni da hoćete da započnete novu igru? Sav prošli progres će se obrisati."
+cancel_button_text = "Ne"
+
+[connection signal="pressed" from="SafeArea/Center/Column/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="SafeArea/Center/Column/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="SafeArea/Center/Column/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="SafeArea/Center/Column/Artifacts" to="." method="_on_artifacts_pressed"]
+[connection signal="pressed" from="SafeArea/Center/Column/Exit" to="." method="_on_exit_pressed"]
+[connection signal="confirmed" from="SafeArea/ConfirmNewGame" to="." method="_on_confirm_new_game_confirmed"]

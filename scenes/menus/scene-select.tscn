@@ -1,0 +1,299 @@
+[gd_scene load_steps=11 format=3 uid="uid://dkeuvw5n3v87y"]
+
+[ext_resource type="Script" uid="uid://hwtwvara7p4u" path="res://scripts/scene_select.gd" id="1_i45wo"]
+[ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="1_l6r5u"]
+[ext_resource type="Script" uid="uid://3joiyodrkksp" path="res://scripts/level_access.gd" id="2_lsyfw"]
+[ext_resource type="Texture2D" uid="uid://ddtousce104h0" path="res://bad.svg" id="3_ndi0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6r5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i45wo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ndi0b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lsyfw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_igey1"]
+
+[sub_resource type="Theme" id="Theme_44tec"]
+HScrollBar/styles/grabber = SubResource("StyleBoxEmpty_l6r5u")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_i45wo")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_ndi0b")
+HScrollBar/styles/scroll = SubResource("StyleBoxEmpty_lsyfw")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_igey1")
+
+[node name="SceneSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_i45wo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.309878, 0.309878, 0.309878, 1)
+
+[node name="SceneTitle" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_right = 180.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Selekcija nivoa"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_44tec")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Level1" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level1"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level1/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level1/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level2" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level2"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level2/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level2/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level3" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level3"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level3/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level3/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level4" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level4"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level4/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level4/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level5" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level5"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level5/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level5/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level6" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level6"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level6/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level6/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level7" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level7"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level7/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level7/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level8" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level8"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level8/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level8/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level9" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level9"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level9/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level9/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
+
+[node name="Level10" type="PanelContainer" parent="MarginContainer/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_lsyfw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer/HBoxContainer/Level10"]
+layout_mode = 2
+
+[node name="LevelTitle" type="Label" parent="MarginContainer/ScrollContainer/HBoxContainer/Level10/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Nivo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelThumbnail" type="TextureButton" parent="MarginContainer/ScrollContainer/HBoxContainer/Level10/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_l6r5u")
+texture_hover = ExtResource("3_ndi0b")
+texture_disabled = ExtResource("3_ndi0b")
+stretch_mode = 5
