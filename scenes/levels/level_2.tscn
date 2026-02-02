@@ -1,3 +1,260 @@
-[gd_scene format=3 uid="uid://c0xrc7f3g2hbn"]
+[gd_scene load_steps=7 format=3 uid="uid://c0xrc7f3g2hbn"]
 
-[node name="Level1" type="Node3D"]
+[ext_resource type="Script" uid="uid://c1m0q78t3fqwk" path="res://scripts/hint_ui.gd" id="1_qpwj6"]
+[ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="2_ibugp"]
+[ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="3_8qukl"]
+[ext_resource type="Texture2D" uid="uid://cnvrmhoadfv5b" path="res://ui/hotbar.png" id="4_3p04p"]
+[ext_resource type="Script" uid="uid://76eofmr5f1ke" path="res://scripts/pausemenu.gd" id="5_qsp8v"]
+[ext_resource type="Script" uid="uid://2hrwpw8jkn0g" path="res://scripts/hints.gd" id="6_nt80m"]
+
+[node name="Level2" type="Node3D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("1_qpwj6")
+
+[node name="Top" type="Control" parent="UI"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.104167
+offset_bottom = -75.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="UI/Top"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ibugp")
+
+[node name="Seperator" type="HBoxContainer" parent="UI/Top/Background"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hints" type="HBoxContainer" parent="UI/Top/Background/Seperator"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Hints" type="TextureButton" parent="UI/Top/Background/Seperator/Hints"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_8qukl")
+
+[node name="Num" type="Label" parent="UI/Top/Background/Seperator/Hints"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "3"
+horizontal_alignment = 1
+
+[node name="Menu" type="HBoxContainer" parent="UI/Top/Background/Seperator"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Pause" type="TextureButton" parent="UI/Top/Background/Seperator/Menu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("3_8qukl")
+
+[node name="Bot" type="Control" parent="UI"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Background" type="TextureRect" parent="UI/Bot"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.303516
+anchor_right = 1.30352
+anchor_bottom = 1.0
+offset_left = 388.5
+offset_right = -388.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ibugp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hotbar" type="Control" parent="UI/Bot/Background"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Imaging" type="TextureRect" parent="UI/Bot/Background/Hotbar"]
+layout_mode = 2
+anchor_left = 17.7875
+anchor_top = -0.95
+anchor_right = 33.6375
+anchor_bottom = 1.55
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(317, 50)
+size_flags_horizontal = 6
+mouse_filter = 2
+texture = ExtResource("4_3p04p")
+stretch_mode = 2
+
+[node name="Slots" type="HBoxContainer" parent="UI/Bot/Background/Hotbar/Imaging"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0362776
+anchor_top = 0.27
+anchor_right = 0.973186
+anchor_bottom = 0.84
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(317, 50)
+theme_override_constants/separation = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot2" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot3" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot4" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot5" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot6" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot7" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot8" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot9" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="Slot10" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+
+[node name="PauseMenu" type="CanvasLayer" parent="UI"]
+visible = false
+script = ExtResource("5_qsp8v")
+
+[node name="DarkenShadow" type="ColorRect" parent="UI/PauseMenu"]
+z_index = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PauseMenu/DarkenShadow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 300
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/DarkenShadow/MarginContainer"]
+layout_mode = 2
+
+[node name="Continue" type="Button" parent="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Nastavi"
+
+[node name="MainMenu" type="Button" parent="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Glavni meni"
+
+[node name="QuitToOS" type="Button" parent="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Izađi iz igrice"
+
+[node name="Hints" type="Node" parent="UI"]
+script = ExtResource("6_nt80m")
+
+[node name="Card" type="TextureRect" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.279687
+anchor_top = 0.155556
+anchor_right = -0.0283203
+anchor_bottom = 0.805556
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8qukl")
+metadata/_edit_use_anchors_ = true
+
+[node name="HintValue" type="Label" parent="UI/Card"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -141.0
+offset_right = 100.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "NEKI TAJNI HINT KOJI TRAJE VRLO DUGO DA SE OBJASNI"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="UI/Top/Background/Seperator/Menu/Pause" to="UI/PauseMenu" method="_on_pause_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer/Continue" to="UI/PauseMenu" method="_on_continue_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer/MainMenu" to="UI/PauseMenu" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer/QuitToOS" to="UI/PauseMenu" method="_on_quit_to_os_pressed"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bt2lmbolifn6y" path="res://scripts/level_1.gd" id="1_x42e6"]
 [ext_resource type="Script" uid="uid://c1m0q78t3fqwk" path="res://scripts/hint_ui.gd" id="2_dnkej"]
 [ext_resource type="Script" uid="uid://crqgi73q4xanl" path="res://scripts/model.gd" id="3_6761a"]
-[ext_resource type="Texture2D" uid="uid://0aetkracifpx" path="res://ui/hotbar.png" id="3_dga24"]
+[ext_resource type="Texture2D" uid="uid://cnvrmhoadfv5b" path="res://ui/hotbar.png" id="3_dga24"]
 [ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="3_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://bi6ycu1u28p6o" path="res://art/models/lvl1_boginja/boginja.tscn" id="3_x42e6"]
 [ext_resource type="Texture2D" uid="uid://b57b655cdb1p3" path="res://art/brat_marko/PNG/MARE-1.png" id="5_6761a"]
@@ -89,6 +89,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -75.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -106,24 +107,26 @@ grow_vertical = 2
 texture = ExtResource("1_ksju7")
 metadata/_edit_use_anchors_ = true
 
-[node name="Holder" type="HBoxContainer" parent="UI/Bot/Background"]
-custom_minimum_size = Vector2(0, 75)
+[node name="Hotbar" type="Control" parent="UI/Bot/Background"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.000243072
-anchor_top = -0.74
-anchor_right = 1.00024
-anchor_bottom = 1.19333
-offset_top = 17.5
-offset_bottom = -17.5
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Imaging" type="TextureRect" parent="UI/Bot/Background/Hotbar"]
+layout_mode = 2
+anchor_left = 17.7875
+anchor_top = -0.95
+anchor_right = 33.6375
+anchor_bottom = 1.55
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Hotbar" type="TextureRect" parent="UI/Bot/Background/Holder"]
-layout_mode = 2
+pivot_offset = Vector2(317, 50)
 size_flags_horizontal = 6
+mouse_filter = 2
 texture = ExtResource("3_dga24")
+stretch_mode = 2
 
 [node name="PauseMenu" type="CanvasLayer" parent="UI"]
 visible = false
