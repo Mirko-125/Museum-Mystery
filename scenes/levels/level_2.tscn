@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0xrc7f3g2hbn"]
+[gd_scene load_steps=9 format=3 uid="uid://c0xrc7f3g2hbn"]
 
 [ext_resource type="Script" uid="uid://c1m0q78t3fqwk" path="res://scripts/hint_ui.gd" id="1_qpwj6"]
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="2_ibugp"]
 [ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="3_8qukl"]
 [ext_resource type="Texture2D" uid="uid://cnvrmhoadfv5b" path="res://ui/hotbar.png" id="4_3p04p"]
+[ext_resource type="Script" uid="uid://bu787nh4h03o2" path="res://scripts/hotbar.gd" id="4_8qukl"]
 [ext_resource type="Script" uid="uid://76eofmr5f1ke" path="res://scripts/pausemenu.gd" id="5_qsp8v"]
+[ext_resource type="Script" uid="uid://biao6knywf2rb" path="res://scripts/slot.gd" id="6_8qukl"]
 [ext_resource type="Script" uid="uid://2hrwpw8jkn0g" path="res://scripts/hints.gd" id="6_nt80m"]
 
 [node name="Level2" type="Node3D"]
@@ -99,6 +101,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
+script = ExtResource("4_8qukl")
 
 [node name="Imaging" type="TextureRect" parent="UI/Bot/Background/Hotbar"]
 layout_mode = 2
@@ -131,51 +134,71 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 1
 
 [node name="Slot2" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 2
 
 [node name="Slot3" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 3
 
 [node name="Slot4" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 4
 
 [node name="Slot5" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 5
 
 [node name="Slot6" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 6
 
 [node name="Slot7" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 7
 
 [node name="Slot8" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 8
 
 [node name="Slot9" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 9
 
 [node name="Slot10" type="TextureButton" parent="UI/Bot/Background/Hotbar/Imaging/Slots"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
+script = ExtResource("6_8qukl")
+slotid = 10
 
 [node name="PauseMenu" type="CanvasLayer" parent="UI"]
 visible = false

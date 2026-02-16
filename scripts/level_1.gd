@@ -3,18 +3,23 @@ extends Node3D
 @onready var cutscene := $Cutscene
 @onready var text_label := $Cutscene/DarkenShadow/HBoxContainer/DialogBox/MarginContainer/Text
 @onready var character := $Cutscene/DarkenShadow/HBoxContainer/Character
+@onready var transition := $Transition
 
 var dialog_data := [
 	{
-		"text": "Welcome to your first adventure!",
+		"text": "Ekipa još uvek postavlja ostale nivoe - 
+		ali bez brige, ti si moj tajni agent...",
 		"character_texture": "res://art/brat_marko/PNG/MARE-1.png"
 	},
 	{
-		"text": "Let me show you the basics…",
+		"text": "...sada reši prvu mini-igru krišom dok ja 
+		dovršavam app sa njima, pa da zajedno
+		dignemo Muzej Vojvodine na noge...",
 		"character_texture": "res://art/brat_marko/PNG/MARE-4.png"
 	},
 	{
-		"text": "Tap to begin!",
+		"text": "...pre nego što kustos kaže 'dovoljno 
+		misterije za danas!'",
 		"character_texture": "res://art/brat_marko/PNG/MARE-3.png"
 	}
 ]
@@ -25,7 +30,7 @@ var can_advance := false
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
-
+	transition.animate("fade_out")
 	if Save.player.level == 0:
 		start_cutscene()
 	else:

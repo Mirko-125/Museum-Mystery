@@ -1,7 +1,10 @@
 extends Control
 
+@onready var transition := $Transition
+
 func _ready() -> void:
+	transition.animate("fade_out")
 	print("Current level is: ", Save.player.level)
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+	transition.animate("fade_in","res://scenes/levels/level_1.tscn")

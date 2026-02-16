@@ -1,6 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdederl2ng15u"]
+[gd_scene load_steps=9 format=3 uid="uid://bdederl2ng15u"]
 
 [ext_resource type="Script" uid="uid://biltly3sphwec" path="res://scripts/main_menu.gd" id="1_a1iuf"]
+[ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_s8hj3"]
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_eq0on"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="4_eq0on"]
+
+[sub_resource type="FontVariation" id="FontVariation_bk00v"]
+base_font = ExtResource("2_s8hj3")
+
+[sub_resource type="Theme" id="Theme_eq0on"]
+
+[sub_resource type="FontVariation" id="FontVariation_lme6y"]
+base_font = ExtResource("3_eq0on")
+
+[sub_resource type="Theme" id="Theme_s8hj3"]
+default_font = ExtResource("3_eq0on")
+default_font_size = 30
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,15 +26,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a1iuf")
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.30397, 0.30397, 0.30397, 1)
-
 [node name="SafeArea" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -27,67 +33,97 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
+theme_override_constants/margin_left = 200
 theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
+theme_override_constants/margin_right = 200
 theme_override_constants/margin_bottom = 50
 
-[node name="Center" type="CenterContainer" parent="SafeArea"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SafeArea"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
 
-[node name="Column" type="VBoxContainer" parent="SafeArea/Center"]
+[node name="Title" type="Label" parent="SafeArea/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 19
-
-[node name="Title" type="Label" parent="SafeArea/Center/Column"]
-layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = SubResource("FontVariation_bk00v")
 theme_override_font_sizes/font_size = 64
 text = "Muzejska misterija"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="NewGame" type="Button" parent="SafeArea/Center/Column"]
-custom_minimum_size = Vector2(0, 72)
+[node name="NewGame" type="Button" parent="SafeArea/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 55
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_eq0on")
+theme_override_font_sizes/font_size = 40
 text = "Nova igra"
 
-[node name="Continue" type="Button" parent="SafeArea/Center/Column"]
-custom_minimum_size = Vector2(0, 72)
+[node name="Continue" type="Button" parent="SafeArea/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 55
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_eq0on")
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_lme6y")
+theme_override_font_sizes/font_size = 40
 text = "Nastavi
 "
 
-[node name="Credits" type="Button" parent="SafeArea/Center/Column"]
-custom_minimum_size = Vector2(0, 72)
+[node name="Credits" type="Button" parent="SafeArea/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 55
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_lme6y")
+theme_override_font_sizes/font_size = 40
 text = "Zasluge"
 
-[node name="Artifacts" type="Button" parent="SafeArea/Center/Column"]
-custom_minimum_size = Vector2(0, 72)
+[node name="Artifacts" type="Button" parent="SafeArea/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 55
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_lme6y")
+theme_override_font_sizes/font_size = 40
 text = "Artefakti"
 
-[node name="Exit" type="Button" parent="SafeArea/Center/Column"]
-custom_minimum_size = Vector2(0, 72)
+[node name="Exit" type="Button" parent="SafeArea/VBoxContainer"]
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
-theme_override_font_sizes/font_size = 55
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource("FontVariation_lme6y")
+theme_override_font_sizes/font_size = 40
 text = "Izlaz"
 
 [node name="ConfirmNewGame" type="ConfirmationDialog" parent="SafeArea"]
 title = "Nova igra"
-size = Vector2i(659, 100)
+size = Vector2i(1160, 120)
 unresizable = true
 borderless = true
 extend_to_title = true
+max_size = Vector2i(1200, 120)
+theme = SubResource("Theme_s8hj3")
 ok_button_text = "Da"
 dialog_text = "Da li ste sigurni da hoćete da započnete novu igru? Sav prošli progres će se obrisati."
 cancel_button_text = "Ne"
 
-[connection signal="pressed" from="SafeArea/Center/Column/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="SafeArea/Center/Column/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="SafeArea/Center/Column/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="SafeArea/Center/Column/Artifacts" to="." method="_on_artifacts_pressed"]
-[connection signal="pressed" from="SafeArea/Center/Column/Exit" to="." method="_on_exit_pressed"]
+[node name="Transition" parent="." instance=ExtResource("4_eq0on")]
+layout_mode = 1
+
+[connection signal="pressed" from="SafeArea/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="SafeArea/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="SafeArea/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="SafeArea/VBoxContainer/Artifacts" to="." method="_on_artifacts_pressed"]
+[connection signal="pressed" from="SafeArea/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="confirmed" from="SafeArea/ConfirmNewGame" to="." method="_on_confirm_new_game_confirmed"]

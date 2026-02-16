@@ -1,10 +1,7 @@
 extends Control
 
+@onready var transition := $Transition
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	transition.animate("fade_out")
+	print("Current level is: ", Save.player.level)

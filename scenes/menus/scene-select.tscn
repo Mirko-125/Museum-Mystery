@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkeuvw5n3v87y"]
+[gd_scene load_steps=12 format=3 uid="uid://dkeuvw5n3v87y"]
 
-[ext_resource type="Script" uid="uid://hwtwvara7p4u" path="res://scripts/scene_select.gd" id="1_i45wo"]
+[ext_resource type="Script" uid="uid://bp5uh3v52rlwr" path="res://scripts/scene_select.gd" id="1_igey1"]
 [ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="1_l6r5u"]
 [ext_resource type="Script" uid="uid://3joiyodrkksp" path="res://scripts/level_access.gd" id="2_lsyfw"]
 [ext_resource type="Texture2D" uid="uid://ddtousce104h0" path="res://bad.svg" id="3_ndi0b"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="4_lsyfw"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6r5u"]
 
@@ -30,7 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
-script = ExtResource("1_i45wo")
+script = ExtResource("1_igey1")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -297,3 +298,6 @@ texture_normal = ExtResource("1_l6r5u")
 texture_hover = ExtResource("3_ndi0b")
 texture_disabled = ExtResource("3_ndi0b")
 stretch_mode = 5
+
+[node name="Transition" parent="." instance=ExtResource("4_lsyfw")]
+layout_mode = 1

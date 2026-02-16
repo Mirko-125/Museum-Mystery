@@ -1,7 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://crx1lqke774f2"]
+[gd_scene load_steps=14 format=3 uid="uid://crx1lqke774f2"]
 
 [ext_resource type="Script" uid="uid://dtxmkqb2qfisu" path="res://scripts/pilot.gd" id="1_0e8ph"]
-[ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="1_nmus7"]
+[ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_a012b"]
+[ext_resource type="Texture2D" uid="uid://cbhkf8m4xxgug" path="res://art/icons/muzej_20loog.png" id="2_dbv2s"]
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_7witx"]
+[ext_resource type="Theme" uid="uid://bq082u6xcbgaq" path="res://themes/firstmodified.tres" id="3_582lf"]
+[ext_resource type="Texture2D" uid="uid://b0wams28t2mvb" path="res://art/icons/kultura_20nova_20logo.png" id="3_bd5ai"]
+[ext_resource type="FontFile" uid="uid://bhyyuv4tk07mx" path="res://fonts/Inria_Serif/InriaSerif-Italic.ttf" id="4_vv3k2"]
+[ext_resource type="FontFile" uid="uid://csve0jco4i828" path="res://fonts/Inria_Serif/InriaSerif-Bold.ttf" id="5_582lf"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="9_ypv5t"]
+
+[sub_resource type="FontVariation" id="FontVariation_vv3k2"]
+base_font = ExtResource("2_a012b")
+
+[sub_resource type="FontVariation" id="FontVariation_ypv5t"]
+base_font = ExtResource("3_7witx")
+
+[sub_resource type="FontVariation" id="FontVariation_ldnoe"]
+base_font = ExtResource("4_vv3k2")
+
+[sub_resource type="FontVariation" id="FontVariation_dedoi"]
+base_font = ExtResource("5_582lf")
 
 [node name="Pilot" type="Control"]
 layout_mode = 3
@@ -12,59 +31,68 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0e8ph")
 
-[node name="SafeArea" type="MarginContainer" parent="."]
+[node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 500
-theme_override_constants/margin_top = 500
-theme_override_constants/margin_right = 500
-theme_override_constants/margin_bottom = 500
 
-[node name="Main" type="VBoxContainer" parent="SafeArea"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Content"]
 layout_mode = 2
-theme_override_constants/separation = 175
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/separation = 75
 
-[node name="Top" type="VBoxContainer" parent="SafeArea/Main"]
+[node name="Title" type="Label" parent="Content/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 24
-alignment = 1
-
-[node name="Title" type="Label" parent="SafeArea/Main/Top"]
-layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_vv3k2")
 theme_override_font_sizes/font_size = 64
-text = "Museum mystery"
+text = "Muzejska misterija"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Start" type="Button" parent="SafeArea/Main/Top"]
-custom_minimum_size = Vector2(350, 0)
+[node name="Start" type="Button" parent="Content/VBoxContainer"]
+custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("3_582lf")
 theme_override_font_sizes/font_size = 54
-text = "Begin"
+text = "Započni igru"
 
-[node name="Bottom" type="HBoxContainer" parent="SafeArea/Main"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Content"]
 layout_mode = 2
-theme_override_constants/separation = 24
+size_flags_vertical = 6
 
-[node name="About" type="RichTextLabel" parent="SafeArea/Main/Bottom"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Content/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.0
-text = "Been struggling for a while now to figure out how exactly they work, to no avail. I've been trying to create three ColorRects on a window, with a slider between each of them. Additionally, I need only the center ColorRect to have a min size, so that the outer two can be completely minimized. My attempts have resulted in either none of them showing up at all, or only two of them showing up, with the left most box already minimized instead of appearing at it's initial size. I've spent a couple of days researching and trying a bunch of different methods to figure out how they work, but I feel like I haven't learned a thing. How do these containers work"
-scroll_active = false
+size_flags_stretch_ratio = 7.0
+theme_override_fonts/normal_font = SubResource("FontVariation_ypv5t")
+theme_override_fonts/italics_font = SubResource("FontVariation_ldnoe")
+theme_override_fonts/bold_font = SubResource("FontVariation_dedoi")
+text = "
+What is Lorem Ipsum?
 
-[node name="Logo1" type="TextureRect" parent="SafeArea/Main/Bottom"]
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Logo1" type="TextureRect" parent="Content/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_nmus7")
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_dbv2s")
 
-[node name="Logo2" type="TextureRect" parent="SafeArea/Main/Bottom"]
+[node name="Logo2" type="TextureRect" parent="Content/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_nmus7")
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("3_bd5ai")
 
-[connection signal="pressed" from="SafeArea/Main/Top/Start" to="." method="_on_start_pressed"]
+[node name="Transition" parent="." instance=ExtResource("9_ypv5t")]
+layout_mode = 1
+
+[connection signal="pressed" from="Content/VBoxContainer/Start" to="." method="_on_start_pressed"]
