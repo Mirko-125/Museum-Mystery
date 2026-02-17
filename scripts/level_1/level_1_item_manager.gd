@@ -28,7 +28,7 @@ func print_selected_items() -> void:
 
 func _check_selection() -> void:
 	if selected_items.size() == max_selected:
-		var required_items = ["Wheat", "Pigeon", "Sun"]
+		var required_items = ["Wheat", "Rain", "Sun"]
 		var is_correct = selected_items.size() == required_items.size()
 		for item in required_items:
 			if not item in selected_items:

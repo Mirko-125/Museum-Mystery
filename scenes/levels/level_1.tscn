@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bgtemf2case3x"]
+[gd_scene load_steps=48 format=4 uid="uid://bgtemf2case3x"]
 
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bt2lmbolifn6y" path="res://scripts/level_1.gd" id="1_x42e6"]
@@ -19,13 +19,85 @@
 [ext_resource type="Texture2D" uid="uid://ccd78wwuo45qi" path="res://ui/Lv1-UI/Txt bubble.png" id="13_iwr0g"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="14_bahl2"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="14_mm8aj"]
+[ext_resource type="Texture2D" uid="uid://d1h8ywfkwjuu1" path="res://art/models/lvl1_props/plocica-simboli-teksture/strela/$strela_BaseColor.1001.png" id="18_7h2jl"]
 [ext_resource type="Texture2D" uid="uid://ce8m8wpq7bep" path="res://ui/Lv1-UI/old_Txt bubble.png" id="19_mkypq"]
-[ext_resource type="PackedScene" uid="uid://bcksxvn2ub32q" path="res://art/models/lvl1_props/finished_items/wheat.tscn" id="20_gmpev"]
+[ext_resource type="Texture2D" uid="uid://b5x3u0ofsjggt" path="res://art/models/lvl1_props/plocica-simboli-teksture/sunce/$sun_BaseColor.1001.png" id="19_mqh5v"]
+[ext_resource type="Texture2D" uid="uid://dxwt852lnlv2h" path="res://art/models/lvl1_props/plocica-simboli-teksture/pigment/$pigment_BaseColor.1001.png" id="20_0qwwm"]
+[ext_resource type="Texture2D" uid="uid://bac0fwqd5bj5f" path="res://art/models/lvl1_props/plocica-simboli-teksture/psenica/$wheat_BaseColor.1001.png" id="20_31oqk"]
+[ext_resource type="Texture2D" uid="uid://bfo4ljrkle08e" path="res://art/models/lvl1_props/plocica-simboli-teksture/munja/$munja_BaseColor.1001.png" id="21_t4umt"]
+[ext_resource type="Texture2D" uid="uid://0mc2gk6co0y2" path="res://art/models/lvl1_props/plocica-simboli-teksture/kruna/$crown_BaseColor.1001.png" id="22_4yk0h"]
+[ext_resource type="Texture2D" uid="uid://d2rm87w7xmj46" path="res://art/models/lvl1_props/plocica-simboli-teksture/kisa/$rain_BaseColor.1001.png" id="23_vmrhw"]
+[ext_resource type="Texture2D" uid="uid://cyofqhgrxmlil" path="res://art/models/lvl1_props/plocica-simboli-teksture/globus/$globe_BaseColor.1001.png" id="24_cfnpk"]
+[ext_resource type="Texture2D" uid="uid://dibbxvp6c61y" path="res://art/models/lvl1_props/plocica-simboli-teksture/mesec/$moon_BaseColor.1001.png" id="25_wvtie"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6761a"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_mkypq"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dd4yj"]
+resource_name = "initialShadingGroup"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d48wx"]
+_surfaces = [{
+"aabb": AABB(-1.58053, -1.58053, -0.143772, 3.16107, 3.16107, 0.287544),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAgABAAQAAwAEAAEABQAAAAIABQADAAAAAgAEAAYABQACAAYAAwAHAAQABQAHAAMABwAGAAQABwAFAAYA"),
+"name": "initialShadingGroup",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD/////AAD/////AAAAAP///////wAAAAD//wAAAAD//wAAAAAAAAAAAAD//wAA//8AAP//AAAAAAAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v6ha0"]
+resource_name = "tile_placeholder_Plocica"
+_surfaces = [{
+"aabb": AABB(-1.58053, -1.58053, -0.143772, 3.16107, 3.16107, 0.287544),
+"attribute_data": PackedByteArray("A1c0/HGptPRxqTT8A1e09ANXtPRxqUeicam09ANXR6IDV0eicanHmnGpR6IDV8eaA1fHmnGpWUhxqceaA1dZSHGpNPzf+7T03/s0/HGptPSVBDT8A1e09ANXNPyVBLT0"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_dd4yj"),
+"name": "initialShadingGroup",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD//////7//////AAD/v/////////+/AAD//wAA/78AAP//AAD/////AAAAAP///////wAA//8AAAAAAAD//wAAAAAAAP+///8AAP///7///wAAAAD/vwAAAAD///+/AAAAAP//AID///////8AgP//AAD//wCAAAD/////AID///////9U1f//AAAAAFTV//8AAP//VNX/////AABU1QAAAAD//1TVAAD//wAAVNUAAP////9U1QAAAAAAAFTV////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9//3////9/////f////3///6qqVFWqqlRVqqpUVaqqVFVU1VTVVNVU1VTVVNVU1VTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d48wx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0qwwm"]
+albedo_texture = ExtResource("20_31oqk")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmpev"]
 size = Vector3(3, 1, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7o3do"]
+albedo_texture = ExtResource("18_7h2jl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7j4k"]
+albedo_texture = ExtResource("19_mqh5v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8s4s"]
+albedo_texture = ExtResource("20_0qwwm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebb2h"]
+albedo_texture = ExtResource("21_t4umt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_row31"]
+albedo_texture = ExtResource("22_4yk0h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytidy"]
+albedo_texture = ExtResource("23_vmrhw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvllt"]
+albedo_texture = ExtResource("24_cfnpk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp4fg"]
+albedo_texture = ExtResource("25_wvtie")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwr0g"]
 texture = ExtResource("13_iwr0g")
@@ -289,16 +361,158 @@ shape = SubResource("CapsuleShape3D_6761a")
 [node name="ItemManager" type="Node" parent="3DWorld/Items"]
 script = ExtResource("5_s8va5")
 
-[node name="Item" parent="3DWorld/Items" instance=ExtResource("20_gmpev")]
-transform = Transform3D(-4.37114e-08, 0, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.91069e-15, -4.1568, -3.63833, -14.1656)
+[node name="Item" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -5.73764, -4.68597, -20.6527)
 script = ExtResource("6_oc4kc")
 item_id = "Wheat"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_0qwwm")
 
 [node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item/Hitbox"]
 transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
-shape = SubResource("BoxShape3D_mkypq")
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item2" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -16.4293, -6.68597, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Arrow"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item2"]
+transform = Transform3D(2.98023e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, 2.98023e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_7o3do")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item2/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item3" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -19.8838, -0.685974, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Sun"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item3"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_o7j4k")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item3/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item4" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -11.5115, -0.685974, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Dye"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item4"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_o8s4s")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item4/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item5" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.304125, 0.314026, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Lightning"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item5"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ebb2h")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item5/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item6" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10.9468, -0.685974, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Crown"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item6"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_row31")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item6/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item7" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.310106, -11.686, -16.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Rain"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item7"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 1, -4.37114e-08, 4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ytidy")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item7/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item8" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 16.9719, -3.68597, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Globe"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item8"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_hvllt")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item8/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
+
+[node name="Item9" type="Node3D" parent="3DWorld/Items"]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 1.91069e-15, 4.37114e-08, 0, 1, -4.37114e-08, 10.8927, -8.68597, -20.6527)
+script = ExtResource("6_oc4kc")
+item_id = "Moon"
+
+[node name="Plocica" type="MeshInstance3D" parent="3DWorld/Items/Item9"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+mesh = SubResource("ArrayMesh_v6ha0")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_dp4fg")
+
+[node name="Hitbox" type="Area3D" parent="3DWorld/Items/Item9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3DWorld/Items/Item9/Hitbox"]
+transform = Transform3D(1, 0, -8.35187e-23, 0, 1, 0, -8.35187e-23, 0, 1, 0, 0, -9.53674e-07)
+shape = SubResource("BoxShape3D_gmpev")
 
 [node name="Cutscene" type="CanvasLayer" parent="."]
 
