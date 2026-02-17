@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bdederl2ng15u"]
+[gd_scene load_steps=18 format=3 uid="uid://bdederl2ng15u"]
 
 [ext_resource type="Script" uid="uid://biltly3sphwec" path="res://scripts/main_menu.gd" id="1_a1iuf"]
 [ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_s8hj3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="4_eq0on"]
 [ext_resource type="Texture2D" uid="uid://bfuyjhnra1q64" path="res://ui/Lv1-UI/Clicked.png" id="5_kh00g"]
 [ext_resource type="Texture2D" uid="uid://7em7q4cereht" path="res://ui/Lv1-UI/Unclicked.png" id="6_41uvu"]
+[ext_resource type="Texture2D" uid="uid://btj36jsokiir4" path="res://ui/zapocni novu igru-BG.png" id="7_41uvu"]
 
 [sub_resource type="FontVariation" id="FontVariation_bk00v"]
 base_font = ExtResource("2_s8hj3")
@@ -23,12 +24,24 @@ texture = ExtResource("6_41uvu")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c51qi"]
 texture = ExtResource("5_kh00g")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y3q1v"]
+texture = ExtResource("7_41uvu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_41uvu"]
+texture = ExtResource("7_41uvu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hxvo"]
+texture = ExtResource("7_41uvu")
+
 [sub_resource type="Theme" id="Theme_s8hj3"]
 default_font = ExtResource("3_eq0on")
 default_font_size = 30
 Button/styles/hover = SubResource("StyleBoxTexture_8pln6")
 Button/styles/normal = SubResource("StyleBoxTexture_wol2m")
 Button/styles/pressed = SubResource("StyleBoxTexture_c51qi")
+Panel/styles/panel = SubResource("StyleBoxTexture_y3q1v")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_41uvu")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_7hxvo")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

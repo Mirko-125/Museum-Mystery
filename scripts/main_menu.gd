@@ -8,6 +8,8 @@ func _ready() -> void:
 	print("Current level is: ", Save.player.level)
 	if Save.player.level == 0:
 		more_levels.visible = false
+	if Save.player.isdemo:
+		more_levels.visible = false
 	transition.animate("fade_out")
 
 func _on_new_game_pressed() -> void:

@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmjcnlmvrgs74"]
+[gd_scene load_steps=6 format=3 uid="uid://cmjcnlmvrgs74"]
 
-[ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="1_gyf36"]
 [ext_resource type="Script" uid="uid://cgisn6mqsj58v" path="res://scripts/level_complete.gd" id="1_sm068"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_6vhog"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="3_28gpf"]
@@ -16,14 +15,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sm068")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_gyf36")
+color = Color(0.59475, 0.59475, 0.59475, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
 layout_mode = 1

@@ -18,6 +18,7 @@ var puzzle_dictionary = {
 }
 
 func _ready() -> void:
+	transition.animate("fade_out")
 	print("Current level is: ", level_num)
 	value.text = puzzle_dictionary[level_num-1]
 
@@ -26,4 +27,7 @@ func _on_menu_pressed() -> void:
 
 func _on_next_level_pressed() -> void:
 	var scene_path := "res://scenes/levels/level_%d.tscn" % level_num
-	get_tree().change_scene_to_file(scene_path)
+	if Save.player.isdemo:
+		transition.animate("fade_in","res://scenes/menus/demo.tscn")
+	else:
+		transition.animate("fade_in",scene_path)

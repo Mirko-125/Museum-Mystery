@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://imrk2r3v0tbn"]
+
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="1_dioak"]
+[ext_resource type="Script" uid="uid://v4k2oshqsffw" path="res://scripts/demo.gd" id="1_xtv2p"]
+[ext_resource type="FontFile" uid="uid://bhyyuv4tk07mx" path="res://fonts/Inria_Serif/InriaSerif-Italic.ttf" id="2_oebia"]
+[ext_resource type="FontFile" uid="uid://csve0jco4i828" path="res://fonts/Inria_Serif/InriaSerif-Bold.ttf" id="3_amovl"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="4_xtv2p"]
+[ext_resource type="Texture2D" uid="uid://bnp67jnejybd" path="res://art/logos/us_mini.png" id="6_amovl"]
+
+[sub_resource type="FontVariation" id="FontVariation_el6qj"]
+base_font = ExtResource("1_dioak")
+
+[sub_resource type="FontVariation" id="FontVariation_vvvrl"]
+base_font = ExtResource("2_oebia")
+
+[sub_resource type="FontVariation" id="FontVariation_s5ovp"]
+base_font = ExtResource("3_amovl")
+
+[node name="Demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xtv2p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 103.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = -95
+theme_override_constants/margin_right = 150
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.0
+theme_override_fonts/normal_font = SubResource("FontVariation_el6qj")
+theme_override_fonts/italics_font = SubResource("FontVariation_vvvrl")
+theme_override_fonts/bold_font = SubResource("FontVariation_s5ovp")
+theme_override_font_sizes/normal_font_size = 40
+text = "Hvala Vam što ste odigrali ovaj demo i istražili prve mehanike igre!
+
+Preostali nivoi i puna priča detaljno su opisani u priloženom dokumentu, gde ćete pronaći viziju celog iskustva.
+
+Aseti, zvukovi i vizuelni elementi su trenutno privremeni i podložni promenama, jer je glavni fokus sada na kodiranju jezgra mehanika, kao i na kreiranju impresivnih 3D vizualizacija artefakata - koje možete pogledati odmah u prilogu.
+
+Više sadržaja i update-ova uskoro stiže!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Team" type="Control" parent="ColorRect"]
+anchors_preset = 0
+offset_left = 11.0
+offset_top = 585.0
+offset_right = 240.0
+offset_bottom = 706.0
+
+[node name="logo2" type="TextureRect" parent="ColorRect/Team"]
+layout_mode = 0
+offset_left = 1084.0
+offset_top = -24.0
+offset_right = 1250.0
+offset_bottom = 127.0
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture = ExtResource("6_amovl")
+
+[node name="Transition" parent="." instance=ExtResource("4_xtv2p")]
+layout_mode = 1
