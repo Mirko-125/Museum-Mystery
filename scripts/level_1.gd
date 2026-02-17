@@ -1,8 +1,8 @@
 extends Node3D
 
 @onready var cutscene := $Cutscene
-@onready var text_label := $Cutscene/DarkenShadow/HBoxContainer/DialogBox/MarginContainer/Text
-@onready var character := $Cutscene/DarkenShadow/HBoxContainer/Character
+@onready var text_label := $Cutscene/DarkenShadow/HBoxContainer/Dialog/Panel/MarginContainer/Label
+@onready var character := $Cutscene/DarkenShadow/HBoxContainer/Character/Marko
 @onready var transition := $Transition
 
 var dialog_data := [
@@ -15,12 +15,12 @@ var dialog_data := [
 		"text": "...sada reši prvu mini-igru krišom dok ja 
 		dovršavam app sa njima, pa da zajedno
 		dignemo Muzej Vojvodine na noge...",
-		"character_texture": "res://art/brat_marko/PNG/MARE-4.png"
+		"character_texture": "res://art/brat_marko/PNG/MARE-6.png"
 	},
 	{
 		"text": "...pre nego što kustos kaže 'dovoljno 
 		misterije za danas!'",
-		"character_texture": "res://art/brat_marko/PNG/MARE-3.png"
+		"character_texture": "res://art/brat_marko/PNG/MARE-4.png"
 	}
 ]
 

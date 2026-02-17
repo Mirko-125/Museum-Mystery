@@ -1,26 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://crx1lqke774f2"]
+[gd_scene load_steps=7 format=3 uid="uid://crx1lqke774f2"]
 
 [ext_resource type="Script" uid="uid://dtxmkqb2qfisu" path="res://scripts/pilot.gd" id="1_0e8ph"]
 [ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_a012b"]
-[ext_resource type="Texture2D" uid="uid://cbhkf8m4xxgug" path="res://art/icons/muzej_20loog.png" id="2_dbv2s"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_7witx"]
-[ext_resource type="Theme" uid="uid://bq082u6xcbgaq" path="res://themes/firstmodified.tres" id="3_582lf"]
-[ext_resource type="Texture2D" uid="uid://b0wams28t2mvb" path="res://art/icons/kultura_20nova_20logo.png" id="3_bd5ai"]
-[ext_resource type="FontFile" uid="uid://bhyyuv4tk07mx" path="res://fonts/Inria_Serif/InriaSerif-Italic.ttf" id="4_vv3k2"]
-[ext_resource type="FontFile" uid="uid://csve0jco4i828" path="res://fonts/Inria_Serif/InriaSerif-Bold.ttf" id="5_582lf"]
+[ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="3_ypv5t"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="9_ypv5t"]
 
 [sub_resource type="FontVariation" id="FontVariation_vv3k2"]
 base_font = ExtResource("2_a012b")
-
-[sub_resource type="FontVariation" id="FontVariation_ypv5t"]
-base_font = ExtResource("3_7witx")
-
-[sub_resource type="FontVariation" id="FontVariation_ldnoe"]
-base_font = ExtResource("4_vv3k2")
-
-[sub_resource type="FontVariation" id="FontVariation_dedoi"]
-base_font = ExtResource("5_582lf")
 
 [node name="Pilot" type="Control"]
 layout_mode = 3
@@ -33,19 +20,19 @@ script = ExtResource("1_0e8ph")
 
 [node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -208.0
+offset_right = 338.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Content"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 6
-theme_override_constants/separation = 75
-
-[node name="Title" type="Label" parent="Content/VBoxContainer"]
+[node name="Title" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_vv3k2")
 theme_override_font_sizes/font_size = 64
@@ -53,46 +40,24 @@ text = "Muzejska misterija"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Start" type="Button" parent="Content/VBoxContainer"]
+[node name="Start" type="Button" parent="Content"]
 custom_minimum_size = Vector2(400, 80)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("3_582lf")
-theme_override_font_sizes/font_size = 54
+focus_mode = 0
+theme = ExtResource("3_ypv5t")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_7witx")
+theme_override_font_sizes/font_size = 40
 text = "Započni igru"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Content"]
-layout_mode = 2
-size_flags_vertical = 6
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Content/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 7.0
-theme_override_fonts/normal_font = SubResource("FontVariation_ypv5t")
-theme_override_fonts/italics_font = SubResource("FontVariation_ldnoe")
-theme_override_fonts/bold_font = SubResource("FontVariation_dedoi")
-text = "
-What is Lorem Ipsum?
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Logo1" type="TextureRect" parent="Content/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("2_dbv2s")
-
-[node name="Logo2" type="TextureRect" parent="Content/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-texture = ExtResource("3_bd5ai")
 
 [node name="Transition" parent="." instance=ExtResource("9_ypv5t")]
 layout_mode = 1
 
-[connection signal="pressed" from="Content/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Content/Start" to="." method="_on_start_pressed"]

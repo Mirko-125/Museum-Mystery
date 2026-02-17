@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://cln80ea7uq6iv"]
+
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="1_mynmg"]
+[ext_resource type="Script" uid="uid://cb1fc5g5ix3pq" path="res://scripts/intros/intro_switch_one.gd" id="1_ukcfi"]
+[ext_resource type="FontFile" uid="uid://bhyyuv4tk07mx" path="res://fonts/Inria_Serif/InriaSerif-Italic.ttf" id="2_cmd3o"]
+[ext_resource type="FontFile" uid="uid://csve0jco4i828" path="res://fonts/Inria_Serif/InriaSerif-Bold.ttf" id="3_nki67"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="5_5vf8r"]
+
+[sub_resource type="FontVariation" id="FontVariation_5vf8r"]
+base_font = ExtResource("1_mynmg")
+
+[sub_resource type="FontVariation" id="FontVariation_o21bu"]
+base_font = ExtResource("2_cmd3o")
+
+[sub_resource type="FontVariation" id="FontVariation_t03my"]
+base_font = ExtResource("3_nki67")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ukcfi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = -95
+theme_override_constants/margin_right = 150
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.0
+theme_override_fonts/normal_font = SubResource("FontVariation_5vf8r")
+theme_override_fonts/italics_font = SubResource("FontVariation_o21bu")
+theme_override_fonts/bold_font = SubResource("FontVariation_t03my")
+theme_override_font_sizes/normal_font_size = 40
+text = "
+Dobrodošli u Muzejsku misteriju!
+
+
+Muzej Vojvodine krije tajne koje čekaju na tebe. Istražuj, rešavaj zagonetke i otkrij priče iza najpoznatijih eksponata.Igra je nastala u okviru projekta \"Fostering museum engagement with young adults”, u saradnji sa organizacijama Kulturanova i Art365
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Transition" parent="." instance=ExtResource("5_5vf8r")]
+layout_mode = 1

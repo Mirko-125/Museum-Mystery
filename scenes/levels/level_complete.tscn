@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmjcnlmvrgs74"]
+[gd_scene load_steps=7 format=3 uid="uid://cmjcnlmvrgs74"]
 
 [ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="1_gyf36"]
 [ext_resource type="Script" uid="uid://cgisn6mqsj58v" path="res://scripts/level_complete.gd" id="1_sm068"]
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_6vhog"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="3_28gpf"]
+[ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="5_sq6ud"]
+[ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="6_sq6ud"]
 
 [node name="Level Complete" type="Control"]
 layout_mode = 3
@@ -38,13 +42,15 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_sq6ud")
 theme_override_font_sizes/font_size = 45
-text = "BRAVO"
+text = "Svaka čast!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Information" type="Label" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6vhog")
 theme_override_font_sizes/font_size = 45
 text = "Pronašli ste trag:"
 horizontal_alignment = 1
@@ -52,6 +58,7 @@ vertical_alignment = 1
 
 [node name="Value" type="Label" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_sq6ud")
 theme_override_font_sizes/font_size = 45
 text = "..."
 horizontal_alignment = 1
@@ -64,14 +71,38 @@ size_flags_vertical = 6
 [node name="Menu" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
+focus_mode = 0
+theme = ExtResource("6_sq6ud")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_fonts/font = ExtResource("3_6vhog")
+theme_override_font_sizes/font_size = 50
 text = "Meni"
 
 [node name="NextLevel" type="Button" parent="Background/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 45
+focus_mode = 0
+theme = ExtResource("6_sq6ud")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_fonts/font = ExtResource("3_6vhog")
+theme_override_font_sizes/font_size = 50
 text = "Sledeći nivo"
+
+[node name="Transition" parent="." instance=ExtResource("3_28gpf")]
+z_index = 5
+layout_mode = 1
 
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

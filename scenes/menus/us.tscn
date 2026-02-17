@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6xoiqbe733m0"]
+
+[ext_resource type="Texture2D" uid="uid://cbhkf8m4xxgug" path="res://art/logos/museum.png" id="1_ci80a"]
+[ext_resource type="Script" uid="uid://c7byj2wb8rd6x" path="res://scripts/intros/intro_switch_three.gd" id="1_p8ll6"]
+[ext_resource type="Texture2D" uid="uid://b73kbjrcsvbtp" path="res://art/logos/us.png" id="2_xv2yk"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="3_yrb4y"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p8ll6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="logo1" type="TextureRect" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("1_ci80a")
+
+[node name="logo2" type="TextureRect" parent="ColorRect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+texture = ExtResource("2_xv2yk")
+
+[node name="Transition" parent="." instance=ExtResource("3_yrb4y")]
+layout_mode = 1

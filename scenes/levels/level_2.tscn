@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0xrc7f3g2hbn"]
+[gd_scene load_steps=10 format=3 uid="uid://c0xrc7f3g2hbn"]
 
 [ext_resource type="Script" uid="uid://c1m0q78t3fqwk" path="res://scripts/hint_ui.gd" id="1_qpwj6"]
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="2_ibugp"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://76eofmr5f1ke" path="res://scripts/pausemenu.gd" id="5_qsp8v"]
 [ext_resource type="Script" uid="uid://biao6knywf2rb" path="res://scripts/slot.gd" id="6_8qukl"]
 [ext_resource type="Script" uid="uid://2hrwpw8jkn0g" path="res://scripts/hints.gd" id="6_nt80m"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="9_3p04p"]
 
 [node name="Level2" type="Node3D"]
 
@@ -276,6 +277,9 @@ text = "NEKI TAJNI HINT KOJI TRAJE VRLO DUGO DA SE OBJASNI"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Transition" parent="." instance=ExtResource("9_3p04p")]
+z_index = 5
 
 [connection signal="pressed" from="UI/Top/Background/Seperator/Menu/Pause" to="UI/PauseMenu" method="_on_pause_pressed"]
 [connection signal="pressed" from="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer/Continue" to="UI/PauseMenu" method="_on_continue_pressed"]

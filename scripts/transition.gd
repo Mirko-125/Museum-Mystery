@@ -7,4 +7,4 @@ func animate(target: String, location: String = "") -> void:
 	animation.play(target)
 	await animation.animation_finished
 	if not location == "":
-		get_tree().change_scene_to_file(location) # ne ucitava za sve
+		get_tree().change_scene_to_file(location)

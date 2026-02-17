@@ -1,5 +1,6 @@
 extends Control
 
+@onready var transition := $Transition
 @onready var value := $Background/MarginContainer/VBoxContainer/Value
 var level_num := Save.player.level
 
@@ -21,7 +22,7 @@ func _ready() -> void:
 	value.text = puzzle_dictionary[level_num-1]
 
 func _on_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/main-menu.tscn")
+	transition.animate("fade_in","res://scenes/menus/main-menu.tscn")
 
 func _on_next_level_pressed() -> void:
 	var scene_path := "res://scenes/levels/level_%d.tscn" % level_num

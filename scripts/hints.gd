@@ -1,7 +1,7 @@
 extends Node
 
 var hints_bank = [
-	{1: "First hint for level 1", 2: "Second hint for level 1", 3: "Third hint for level 1"},
+	{1: "Boginja je bila simbol dobrobiti i napretka zajednice.", 2: "Sunce, mesec i kiša - oni hrane zemlju, a ne vladaju njome.", 3: "Pogledaj koji od simbola se vezuju za zemlju i prosperitet."},
 	{1: "First hint for level 2", 2: "Second hint for level 2", 3: "Third hint for level 2"},
 	{1: "First hint for level 3", 2: "Second hint for level 3", 3: "Third hint for level 3"},
 	{1: "First hint for level 4", 2: "Second hint for level 4", 3: "Third hint for level 4"},

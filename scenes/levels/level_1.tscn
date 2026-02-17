@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bgtemf2case3x"]
+[gd_scene load_steps=22 format=3 uid="uid://bgtemf2case3x"]
 
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bt2lmbolifn6y" path="res://scripts/level_1.gd" id="1_x42e6"]
@@ -13,12 +13,21 @@
 [ext_resource type="PackedScene" uid="uid://c6hktbjc8acjo" path="res://art/models/lvl1_props/tile_placeholder.glb" id="5_sk5k4"]
 [ext_resource type="Script" uid="uid://2hrwpw8jkn0g" path="res://scripts/hints.gd" id="6_iav0o"]
 [ext_resource type="Script" uid="uid://giocbidqgs30" path="res://scripts/level_1_item.gd" id="6_oc4kc"]
+[ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="7_bahl2"]
+[ext_resource type="Texture2D" uid="uid://ccd78wwuo45qi" path="res://ui/Lv1-UI/Txt bubble.png" id="13_iwr0g"]
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="14_bahl2"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="14_mm8aj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6761a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sk5k4"]
 size = Vector3(2.4, 2.4, 2.4)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iwr0g"]
+texture = ExtResource("13_iwr0g")
+
+[sub_resource type="Theme" id="Theme_bahl2"]
+Panel/styles/panel = SubResource("StyleBoxTexture_iwr0g")
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_x42e6")
@@ -73,8 +82,7 @@ horizontal_alignment = 1
 
 [node name="Menu" type="HBoxContainer" parent="UI/Top/Background/Seperator"]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_horizontal = 3
 alignment = 1
 
 [node name="Pause" type="TextureButton" parent="UI/Top/Background/Seperator/Menu"]
@@ -157,19 +165,54 @@ theme_override_constants/margin_bottom = 300
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/DarkenShadow/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Continue" type="Button" parent="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 125)
 layout_mode = 2
+focus_mode = 0
+theme = ExtResource("7_bahl2")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("14_bahl2")
 theme_override_font_sizes/font_size = 50
 text = "Nastavi"
 
 [node name="MainMenu" type="Button" parent="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 125)
 layout_mode = 2
+focus_mode = 0
+theme = ExtResource("7_bahl2")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("14_bahl2")
 theme_override_font_sizes/font_size = 50
 text = "Glavni meni"
 
 [node name="QuitToOS" type="Button" parent="UI/PauseMenu/DarkenShadow/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 125)
 layout_mode = 2
+focus_mode = 0
+theme = ExtResource("7_bahl2")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("14_bahl2")
 theme_override_font_sizes/font_size = 50
 text = "Izađi iz igrice"
 
@@ -321,7 +364,6 @@ item_id = "Horse"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Cutscene" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="DarkenShadow" type="ColorRect" parent="Cutscene"]
 anchors_preset = 15
@@ -335,43 +377,63 @@ metadata/_edit_use_anchors_ = true
 [node name="HBoxContainer" type="HBoxContainer" parent="Cutscene/DarkenShadow"]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 285.0
+offset_top = -824.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 
-[node name="DialogBox" type="ColorRect" parent="Cutscene/DarkenShadow/HBoxContainer"]
+[node name="Dialog" type="Control" parent="Cutscene/DarkenShadow/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 5.0
-color = Color(0.137255, 0.137255, 0.137255, 1)
+theme = SubResource("Theme_bahl2")
 
-[node name="MarginContainer" type="MarginContainer" parent="Cutscene/DarkenShadow/HBoxContainer/DialogBox"]
+[node name="Panel" type="Panel" parent="Cutscene/DarkenShadow/HBoxContainer/Dialog"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 505.0
+offset_right = -573.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 65
-theme_override_constants/margin_top = 65
-theme_override_constants/margin_right = 65
-theme_override_constants/margin_bottom = 65
 
-[node name="Text" type="Label" parent="Cutscene/DarkenShadow/HBoxContainer/DialogBox/MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 45
-text = "Starter Text"
+[node name="MarginContainer" type="MarginContainer" parent="Cutscene/DarkenShadow/HBoxContainer/Dialog/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = -215
+theme_override_constants/margin_right = 0
 
-[node name="Character" type="TextureRect" parent="Cutscene/DarkenShadow/HBoxContainer"]
+[node name="Label" type="Label" parent="Cutscene/DarkenShadow/HBoxContainer/Dialog/Panel/MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_bahl2")
+theme_override_font_sizes/font_size = 30
+text = "TEXT"
+
+[node name="Character" type="Control" parent="Cutscene/DarkenShadow/HBoxContainer"]
+layout_mode = 2
+
+[node name="Marko" type="TextureRect" parent="Cutscene/DarkenShadow/HBoxContainer/Character"]
+layout_mode = 2
+anchor_top = 0.319175
+anchor_bottom = 1.59587
+offset_left = -536.0
+offset_right = -50.8544
 texture = ExtResource("5_6761a")
-expand_mode = 1
-stretch_mode = 5
+expand_mode = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Finalization" type="CanvasLayer" parent="."]
 visible = false
@@ -399,6 +461,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 5.0
+theme_override_fonts/font = ExtResource("14_bahl2")
 theme_override_font_sizes/font_size = 60
 text = "Koji motiv povezuje sve ove simbole?"
 horizontal_alignment = 1
@@ -411,6 +474,15 @@ size_flags_vertical = 3
 [node name="Option1" type="Button" parent="Finalization/DarkenShadow/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("7_bahl2")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
 theme_override_font_sizes/font_size = 55
 text = "Plodnost
 "
@@ -418,12 +490,30 @@ text = "Plodnost
 [node name="Option2" type="Button" parent="Finalization/DarkenShadow/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("7_bahl2")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
 theme_override_font_sizes/font_size = 55
 text = "Rat"
 
 [node name="Option3" type="Button" parent="Finalization/DarkenShadow/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
+theme = ExtResource("7_bahl2")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
 theme_override_font_sizes/font_size = 55
 text = "Trgovina
 "

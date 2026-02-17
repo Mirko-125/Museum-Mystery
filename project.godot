@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Museum Mystery"
-run/main_scene="uid://bgecdiq35fyul"
+run/main_scene="uid://cln80ea7uq6iv"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://cukp58asmr5ox"
 
 [autoload]
 
@@ -33,5 +33,6 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 viewport/transparent_background=true

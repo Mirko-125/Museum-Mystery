@@ -1,21 +1,34 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdederl2ng15u"]
+[gd_scene load_steps=14 format=3 uid="uid://bdederl2ng15u"]
 
 [ext_resource type="Script" uid="uid://biltly3sphwec" path="res://scripts/main_menu.gd" id="1_a1iuf"]
 [ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_s8hj3"]
+[ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="3_bk00v"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_eq0on"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="4_eq0on"]
+[ext_resource type="Texture2D" uid="uid://bfuyjhnra1q64" path="res://ui/Lv1-UI/Clicked.png" id="5_kh00g"]
+[ext_resource type="Texture2D" uid="uid://7em7q4cereht" path="res://ui/Lv1-UI/Unclicked.png" id="6_41uvu"]
 
 [sub_resource type="FontVariation" id="FontVariation_bk00v"]
 base_font = ExtResource("2_s8hj3")
 
-[sub_resource type="Theme" id="Theme_eq0on"]
-
 [sub_resource type="FontVariation" id="FontVariation_lme6y"]
 base_font = ExtResource("3_eq0on")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8pln6"]
+texture = ExtResource("5_kh00g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wol2m"]
+texture = ExtResource("6_41uvu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c51qi"]
+texture = ExtResource("5_kh00g")
 
 [sub_resource type="Theme" id="Theme_s8hj3"]
 default_font = ExtResource("3_eq0on")
 default_font_size = 30
+Button/styles/hover = SubResource("StyleBoxTexture_8pln6")
+Button/styles/normal = SubResource("StyleBoxTexture_wol2m")
+Button/styles/pressed = SubResource("StyleBoxTexture_c51qi")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -59,6 +72,15 @@ custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("3_bk00v")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("3_eq0on")
 theme_override_font_sizes/font_size = 40
@@ -69,7 +91,15 @@ custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = SubResource("Theme_eq0on")
+focus_mode = 0
+theme = ExtResource("3_bk00v")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = SubResource("FontVariation_lme6y")
 theme_override_font_sizes/font_size = 40
@@ -81,6 +111,15 @@ custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("3_bk00v")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = SubResource("FontVariation_lme6y")
 theme_override_font_sizes/font_size = 40
@@ -91,6 +130,15 @@ custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("3_bk00v")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = SubResource("FontVariation_lme6y")
 theme_override_font_sizes/font_size = 40
@@ -101,6 +149,15 @@ custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("3_bk00v")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = SubResource("FontVariation_lme6y")
 theme_override_font_sizes/font_size = 40
@@ -114,9 +171,9 @@ borderless = true
 extend_to_title = true
 max_size = Vector2i(1200, 120)
 theme = SubResource("Theme_s8hj3")
-ok_button_text = "Da"
+ok_button_text = "   Da   "
 dialog_text = "Da li ste sigurni da hoćete da započnete novu igru? Sav prošli progres će se obrisati."
-cancel_button_text = "Ne"
+cancel_button_text = "   Ne   "
 
 [node name="Transition" parent="." instance=ExtResource("4_eq0on")]
 layout_mode = 1
