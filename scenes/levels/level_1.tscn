@@ -1,22 +1,26 @@
-[gd_scene load_steps=22 format=3 uid="uid://bgtemf2case3x"]
+[gd_scene load_steps=28 format=3 uid="uid://bgtemf2case3x"]
 
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bt2lmbolifn6y" path="res://scripts/level_1.gd" id="1_x42e6"]
 [ext_resource type="Script" uid="uid://c1m0q78t3fqwk" path="res://scripts/hint_ui.gd" id="2_dnkej"]
 [ext_resource type="Script" uid="uid://crqgi73q4xanl" path="res://scripts/model.gd" id="3_6761a"]
-[ext_resource type="Texture2D" uid="uid://cnvrmhoadfv5b" path="res://ui/hotbar.png" id="3_dga24"]
-[ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="3_qxy0u"]
+[ext_resource type="Texture2D" uid="uid://bm6ssa16hdp3m" path="res://ui/hotbar.png" id="3_dga24"]
 [ext_resource type="PackedScene" uid="uid://bi6ycu1u28p6o" path="res://art/models/lvl1_boginja/boginja.tscn" id="3_x42e6"]
+[ext_resource type="Texture2D" uid="uid://onl4ssymc48r" path="res://art/mini_buttons/hint.png" id="4_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://b57b655cdb1p3" path="res://art/brat_marko/PNG/MARE-1.png" id="5_6761a"]
 [ext_resource type="Script" uid="uid://76eofmr5f1ke" path="res://scripts/pausemenu.gd" id="5_excbq"]
+[ext_resource type="Texture2D" uid="uid://dcxfq4bna8acy" path="res://art/mini_buttons/pause.png" id="5_gmpev"]
+[ext_resource type="FontFile" uid="uid://brhms5u1bjq1t" path="res://fonts/Inria_Serif/InriaSerif-BoldItalic.ttf" id="5_mkypq"]
 [ext_resource type="Script" uid="uid://ch864qf2n50xy" path="res://scripts/level_1/level_1_item_manager.gd" id="5_s8va5"]
 [ext_resource type="PackedScene" uid="uid://c6hktbjc8acjo" path="res://art/models/lvl1_props/tile_placeholder.glb" id="5_sk5k4"]
 [ext_resource type="Script" uid="uid://2hrwpw8jkn0g" path="res://scripts/hints.gd" id="6_iav0o"]
 [ext_resource type="Script" uid="uid://giocbidqgs30" path="res://scripts/level_1_item.gd" id="6_oc4kc"]
 [ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="7_bahl2"]
+[ext_resource type="Texture2D" uid="uid://b8nkpgwy0o377" path="res://art/hints/hint-box.png" id="11_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://ccd78wwuo45qi" path="res://ui/Lv1-UI/Txt bubble.png" id="13_iwr0g"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="14_bahl2"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="14_mm8aj"]
+[ext_resource type="Texture2D" uid="uid://ce8m8wpq7bep" path="res://ui/Lv1-UI/old_Txt bubble.png" id="19_mkypq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6761a"]
 
@@ -28,6 +32,12 @@ texture = ExtResource("13_iwr0g")
 
 [sub_resource type="Theme" id="Theme_bahl2"]
 Panel/styles/panel = SubResource("StyleBoxTexture_iwr0g")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmpev"]
+texture = ExtResource("19_mkypq")
+
+[sub_resource type="Theme" id="Theme_mkypq"]
+Panel/styles/panel = SubResource("StyleBoxTexture_gmpev")
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_x42e6")
@@ -59,6 +69,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -466.0
+offset_top = -26.0
+offset_right = 483.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -72,10 +86,11 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_qxy0u")
+texture_normal = ExtResource("4_v6ha0")
 
 [node name="Num" type="Label" parent="UI/Top/Background/Seperator/Hints"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_mkypq")
 theme_override_font_sizes/font_size = 50
 text = "3"
 horizontal_alignment = 1
@@ -89,7 +104,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("3_qxy0u")
+texture_normal = ExtResource("5_gmpev")
 
 [node name="Bot" type="Control" parent="UI"]
 custom_minimum_size = Vector2(0, 75)
@@ -227,7 +242,7 @@ anchor_right = -0.0283203
 anchor_bottom = 0.805556
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_qxy0u")
+texture = ExtResource("11_v6ha0")
 metadata/_edit_use_anchors_ = true
 
 [node name="HintValue" type="Label" parent="UI/Card"]
@@ -243,8 +258,9 @@ offset_right = 100.0
 offset_bottom = 129.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("14_bahl2")
 theme_override_font_sizes/font_size = 20
-text = "NEKI TAJNI HINT KOJI TRAJE VRLO DUGO DA SE OBJASNI"
+text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -274,7 +290,7 @@ shape = SubResource("CapsuleShape3D_6761a")
 script = ExtResource("5_s8va5")
 
 [node name="Item" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87706, 2.38419e-07, -12.0889)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.87706, -0.208778, -17.0814)
 script = ExtResource("6_oc4kc")
 item_id = "Wheat"
 
@@ -284,7 +300,7 @@ item_id = "Wheat"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item2" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87706, -6.11104, -12.0889)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -8.87706, -6.66349, -14.5366)
 script = ExtResource("6_oc4kc")
 item_id = "Sun"
 
@@ -294,7 +310,7 @@ item_id = "Sun"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item3" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.877, -6.111, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.877, -6.66339, -14.5366)
 script = ExtResource("6_oc4kc")
 item_id = "Moon"
 
@@ -304,7 +320,7 @@ item_id = "Moon"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item4" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.877, 0, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 8.877, -0.208678, -17.0814)
 script = ExtResource("6_oc4kc")
 item_id = "Pigeon"
 
@@ -314,7 +330,7 @@ item_id = "Pigeon"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item7" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8036, -6.111, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 14.8036, -6.66339, -14.5366)
 script = ExtResource("6_oc4kc")
 item_id = "Bread"
 
@@ -324,7 +340,7 @@ item_id = "Bread"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item8" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8036, 0, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 14.8036, -0.208678, -17.0814)
 script = ExtResource("6_oc4kc")
 item_id = "Pig"
 
@@ -334,7 +350,7 @@ item_id = "Pig"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item9" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.804, -6.111, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -14.804, -6.66339, -14.5366)
 script = ExtResource("6_oc4kc")
 item_id = "Plains"
 
@@ -344,7 +360,7 @@ item_id = "Plains"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item10" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.804, 0, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -14.804, -0.208678, -17.0814)
 script = ExtResource("6_oc4kc")
 item_id = "Tree"
 
@@ -354,7 +370,7 @@ item_id = "Tree"
 shape = SubResource("BoxShape3D_sk5k4")
 
 [node name="Item5" parent="3DWorld/Items" instance=ExtResource("5_sk5k4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.52663, -12.089)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -10.3049, -16.9522)
 script = ExtResource("6_oc4kc")
 item_id = "Horse"
 
@@ -397,9 +413,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 48.0
 offset_top = 505.0
-offset_right = -573.0
+offset_right = -210.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_mkypq")
 
 [node name="MarginContainer" type="MarginContainer" parent="Cutscene/DarkenShadow/HBoxContainer/Dialog/Panel"]
 layout_mode = 1

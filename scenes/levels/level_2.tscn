@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c1m0q78t3fqwk" path="res://scripts/hint_ui.gd" id="1_qpwj6"]
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="2_ibugp"]
 [ext_resource type="Texture2D" uid="uid://cpah3enfhjfud" path="res://icon.svg" id="3_8qukl"]
-[ext_resource type="Texture2D" uid="uid://cnvrmhoadfv5b" path="res://ui/hotbar.png" id="4_3p04p"]
+[ext_resource type="Texture2D" uid="uid://bm6ssa16hdp3m" path="res://ui/hotbar.png" id="4_3p04p"]
 [ext_resource type="Script" uid="uid://bu787nh4h03o2" path="res://scripts/hotbar.gd" id="4_8qukl"]
 [ext_resource type="Script" uid="uid://76eofmr5f1ke" path="res://scripts/pausemenu.gd" id="5_qsp8v"]
 [ext_resource type="Script" uid="uid://biao6knywf2rb" path="res://scripts/slot.gd" id="6_8qukl"]

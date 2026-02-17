@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://bcksxvn2ub32q"]
+
+[ext_resource type="PackedScene" uid="uid://c6hktbjc8acjo" path="res://art/models/lvl1_props/tile_placeholder.glb" id="1_gnjjo"]
+[ext_resource type="Texture2D" uid="uid://cr4ep3muuaoph" path="res://art/models/lvl1_props/plocica-simboli-teksture/psenica/$wheat_Height.1001.png" id="2_4ht5t"]
+[ext_resource type="Texture2D" uid="uid://bxobs6ufp8exq" path="res://art/models/lvl1_props/plocica-simboli-teksture/psenica/$wheat_Normal.1001.png" id="3_y2qvr"]
+[ext_resource type="Texture2D" uid="uid://nfs4d3wopt4v" path="res://art/models/lvl1_props/plocica-simboli-teksture/psenica/$wheat_Roughness.1001.png" id="4_min2k"]
+[ext_resource type="Texture2D" uid="uid://bac0fwqd5bj5f" path="res://art/models/lvl1_props/plocica-simboli-teksture/psenica/$wheat_BaseColor.1001.png" id="5_wwft1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogg4a"]
+roughness_texture = ExtResource("4_min2k")
+normal_enabled = true
+normal_texture = ExtResource("3_y2qvr")
+heightmap_enabled = true
+heightmap_texture = ExtResource("2_4ht5t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_175pt"]
+albedo_texture = ExtResource("5_wwft1")
+
+[node name="tile_placeholder" instance=ExtResource("1_gnjjo")]
+
+[node name="Plocica" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_ogg4a")
+material_overlay = SubResource("StandardMaterial3D_175pt")
