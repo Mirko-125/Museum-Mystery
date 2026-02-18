@@ -73,14 +73,16 @@ offset_right = 240.0
 offset_bottom = 706.0
 
 [node name="logo2" type="TextureRect" parent="ColorRect/Team"]
+visible = false
 layout_mode = 0
-offset_left = 1084.0
-offset_top = -24.0
-offset_right = 1250.0
-offset_bottom = 127.0
+anchor_left = 4.73362
+anchor_top = -0.198347
+anchor_right = 5.45852
+anchor_bottom = 1.04959
 size_flags_horizontal = 2
 size_flags_vertical = 4
 texture = ExtResource("5_wr0bx")
+metadata/_edit_use_anchors_ = true
 
 [node name="Transition" parent="." instance=ExtResource("6_cokqr")]
 layout_mode = 1

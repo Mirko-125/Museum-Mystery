@@ -1,6 +1,6 @@
 extends Node
 
-@export var max_selected := 3
+@export var max_selected := 6
 @export var correct_items: Array[String] = [] 
 @onready var camera: Camera3D = $"../../Camera3D"
 @onready var level = $"../../.."
@@ -29,7 +29,7 @@ func print_selected_items() -> void:
 
 func _check_selection() -> void:
 	if selected_items.size() == max_selected:
-		var required_items = ["Wheat", "Rain", "Sun"]
+		var required_items = ["Wheat", "Rain", "Sun", "Dye", "Moon"]
 		var is_correct = selected_items.size() == required_items.size()
 		for item in required_items:
 			if not item in selected_items:
