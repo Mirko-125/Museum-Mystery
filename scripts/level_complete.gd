@@ -2,6 +2,7 @@ extends Control
 
 @onready var transition := $Transition
 @onready var value := $Background/MarginContainer/VBoxContainer/Value
+@onready var sound := $sound
 var level_num := Save.player.level
 
 var puzzle_dictionary = {
@@ -23,9 +24,11 @@ func _ready() -> void:
 	value.text = puzzle_dictionary[level_num-1]
 
 func _on_menu_pressed() -> void:
+	sound.play()
 	transition.animate("fade_in","res://scenes/menus/main-menu.tscn")
 
 func _on_next_level_pressed() -> void:
+	sound.play()
 	var scene_path := "res://scenes/levels/level_%d.tscn" % level_num
 	if Save.player.isdemo:
 		transition.animate("fade_in","res://scenes/menus/demo.tscn")

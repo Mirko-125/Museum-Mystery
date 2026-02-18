@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://crx1lqke774f2"]
+[gd_scene load_steps=8 format=3 uid="uid://crx1lqke774f2"]
 
 [ext_resource type="Script" uid="uid://dtxmkqb2qfisu" path="res://scripts/pilot.gd" id="1_0e8ph"]
 [ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_a012b"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_7witx"]
 [ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="3_ypv5t"]
+[ext_resource type="AudioStream" uid="uid://oor5rno46el" path="res://audio/Free/Mono/ogg/JDSherbert - Wooden UI SFX Pack - Confirm - 1.ogg" id="6_7witx"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="9_ypv5t"]
 
 [sub_resource type="FontVariation" id="FontVariation_vv3k2"]
@@ -59,5 +60,8 @@ text = "Započni igru"
 
 [node name="Transition" parent="." instance=ExtResource("9_ypv5t")]
 layout_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7witx")
 
 [connection signal="pressed" from="Content/Start" to="." method="_on_start_pressed"]

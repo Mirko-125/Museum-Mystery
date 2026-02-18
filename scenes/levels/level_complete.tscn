@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmjcnlmvrgs74"]
+[gd_scene load_steps=7 format=3 uid="uid://cmjcnlmvrgs74"]
 
 [ext_resource type="Script" uid="uid://cgisn6mqsj58v" path="res://scripts/level_complete.gd" id="1_sm068"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="3_6vhog"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="3_28gpf"]
 [ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="5_sq6ud"]
+[ext_resource type="AudioStream" uid="uid://oor5rno46el" path="res://audio/Free/Mono/ogg/JDSherbert - Wooden UI SFX Pack - Confirm - 1.ogg" id="6_6vhog"]
 [ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="6_sq6ud"]
 
 [node name="Level Complete" type="Control"]
@@ -102,6 +103,9 @@ text = "Sledeći nivo"
 [node name="Transition" parent="." instance=ExtResource("3_28gpf")]
 z_index = 5
 layout_mode = 1
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6vhog")
 
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="Background/MarginContainer/VBoxContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

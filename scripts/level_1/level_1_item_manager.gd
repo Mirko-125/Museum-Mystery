@@ -5,7 +5,8 @@ extends Node
 @onready var camera: Camera3D = $"../../Camera3D"
 @onready var level = $"../../.."
 @onready var finalization := $"../../../Finalization"
-
+@onready var wrong := $"../../../UI/OptionWrong"
+@onready var correct := $"../../../UI/OptionCorrect"
 var selected_items: Array[String] = []
 
 func select_item(id: String) -> void:
@@ -35,9 +36,11 @@ func _check_selection() -> void:
 				is_correct = false
 				break
 		if is_correct:
+			correct.play()
 			print("Correct selection!")
 			finalization.visible = true
 		else:
+			wrong.play()
 			print("Incorrect selection. Resetting...")
 			_shake_camera()
 			reset()
@@ -67,6 +70,7 @@ func _deselect_all_items() -> void:
 			child.deselect()
 
 func _reset_progress() -> void:
+	wrong.play()
 	print("Incorrect answer. Resetting...")
 	finalization.visible = false
 	_shake_camera()

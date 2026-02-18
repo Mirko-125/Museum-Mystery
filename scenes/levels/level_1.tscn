@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://bgtemf2case3x"]
+[gd_scene load_steps=51 format=4 uid="uid://bgtemf2case3x"]
 
 [ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="1_ksju7"]
 [ext_resource type="Script" uid="uid://bt2lmbolifn6y" path="res://scripts/level_1.gd" id="1_x42e6"]
@@ -17,8 +17,11 @@
 [ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="7_bahl2"]
 [ext_resource type="Texture2D" uid="uid://b8nkpgwy0o377" path="res://art/hints/hint-box.png" id="11_v6ha0"]
 [ext_resource type="Texture2D" uid="uid://ccd78wwuo45qi" path="res://ui/Lv1-UI/Txt bubble.png" id="13_iwr0g"]
+[ext_resource type="AudioStream" uid="uid://bw3d2av66qljq" path="res://audio/Free/Mono/ogg/JDSherbert - Wooden UI SFX Pack - Cancel - 2.ogg" id="13_t4umt"]
 [ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="14_bahl2"]
 [ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="14_mm8aj"]
+[ext_resource type="AudioStream" uid="uid://cyf7nihbiaesd" path="res://audio/Free/Mono/ogg/JDSherbert - Wooden UI SFX Pack - Cancel - 1.ogg" id="14_vmrhw"]
+[ext_resource type="AudioStream" uid="uid://cdlhmkdr3lcc2" path="res://audio/Free/Mono/ogg/JDSherbert - Wooden UI SFX Pack - Error - 1.ogg" id="15_cfnpk"]
 [ext_resource type="Texture2D" uid="uid://d1h8ywfkwjuu1" path="res://art/models/lvl1_props/plocica-simboli-teksture/strela/$strela_BaseColor.1001.png" id="18_7h2jl"]
 [ext_resource type="Texture2D" uid="uid://ce8m8wpq7bep" path="res://ui/Lv1-UI/old_Txt bubble.png" id="19_mkypq"]
 [ext_resource type="Texture2D" uid="uid://b5x3u0ofsjggt" path="res://art/models/lvl1_props/plocica-simboli-teksture/sunce/$sun_BaseColor.1001.png" id="19_mqh5v"]
@@ -336,6 +339,15 @@ text = "..."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="HintSound" type="AudioStreamPlayer2D" parent="UI"]
+stream = ExtResource("13_t4umt")
+
+[node name="OptionCorrect" type="AudioStreamPlayer2D" parent="UI"]
+stream = ExtResource("14_vmrhw")
+
+[node name="OptionWrong" type="AudioStreamPlayer2D" parent="UI"]
+stream = ExtResource("15_cfnpk")
 
 [node name="3DWorld" type="Node3D" parent="."]
 

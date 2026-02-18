@@ -3,6 +3,7 @@ extends Control
 @onready var confirm_dialog := $SafeArea/ConfirmNewGame
 @onready var transition := $Transition
 @onready var more_levels := $SafeArea/VBoxContainer/Continue
+@onready var audio := $AudioStreamPlayer2D
 
 func _ready() -> void:
 	print("Current level is: ", Save.player.level)
@@ -17,16 +18,21 @@ func _on_new_game_pressed() -> void:
 	
 func _on_confirm_new_game_confirmed() -> void:
 	Save.reset_player()
+	audio.play()
 	transition.animate("fade_in","res://scenes/menus/pilot.tscn")
 	
 func _on_continue_pressed() -> void:
+	audio.play()
 	transition.animate("fade_in","res://scenes/menus/scene-select.tscn")
 
 func _on_exit_pressed() -> void:
+	audio.play()
 	get_tree().quit()
 
 func _on_artifacts_pressed() -> void:
+	audio.play()
 	transition.animate("fade_in","res://scenes/menus/artifacts.tscn")
 
 func _on_credits_pressed() -> void:
+	audio.play()
 	transition.animate("fade_in","res://scenes/menus/credits.tscn")

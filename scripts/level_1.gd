@@ -4,6 +4,7 @@ extends Node3D
 @onready var text_label := $Cutscene/DarkenShadow/HBoxContainer/Dialog/Panel/MarginContainer/Label
 @onready var character := $Cutscene/DarkenShadow/HBoxContainer/Character/Marko
 @onready var transition := $Transition
+@onready var correct := $UI/OptionCorrect
 
 var dialog_data := [
 	{
@@ -80,5 +81,6 @@ func finish_cutscene() -> void:
 	cutscene = null
 
 func _on_option_1_pressed() -> void:
+	correct.play()
 	Save.assign_level(2)
 	get_tree().change_scene_to_file("res://scenes/levels/level_complete.tscn");

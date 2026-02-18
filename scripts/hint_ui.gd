@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var number_of_hints = $Top/Background/Seperator/Hints/Num
 @onready var hint_card: Control = $Card
 @onready var hint_value = $Card/HintValue
+@onready var hint_sound = $HintSound
 
 var card_visible: bool = false
 var tween: Tween = null
@@ -30,7 +31,7 @@ func _on_hint_button_pressed() -> void:
 	hints_available -= 1
 	if hints_available == 0:
 		hint_button.disabled = true
-		
+	hint_sound.play()
 	number_of_hints.text = str(hints_available)
 	card_visible = true
 	hint_card.visible = true

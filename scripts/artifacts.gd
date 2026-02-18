@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var transition := $Transition
+@onready var audio := $AudioStreamPlayer2D
 
 func _ready() -> void:
 	transition.animate("fade_out")
@@ -13,4 +14,5 @@ func update_3d_nodes() -> void:
 			child.visible = i <= Save.player.level
 
 func _on_start_pressed() -> void:
+	audio.play()
 	transition.animate("fade_in","res://scenes/menus/main-menu.tscn")

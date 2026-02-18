@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdederl2ng15u"]
+[gd_scene load_steps=19 format=3 uid="uid://bdederl2ng15u"]
 
 [ext_resource type="Script" uid="uid://bsj6t3rjwm5sq" path="res://scripts/main_menu.gd" id="1_a1iuf"]
 [ext_resource type="FontFile" uid="uid://dxbjbm8qmguxk" path="res://fonts/Inknut_Antiqua/InknutAntiqua-Regular.ttf" id="2_s8hj3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bfuyjhnra1q64" path="res://ui/Lv1-UI/Clicked.png" id="5_kh00g"]
 [ext_resource type="Texture2D" uid="uid://7em7q4cereht" path="res://ui/Lv1-UI/Unclicked.png" id="6_41uvu"]
 [ext_resource type="Texture2D" uid="uid://btj36jsokiir4" path="res://ui/zapocni novu igru-BG.png" id="7_41uvu"]
+[ext_resource type="AudioStream" uid="uid://oor5rno46el" path="res://audio/Free/Mono/ogg/JDSherbert - Wooden UI SFX Pack - Confirm - 1.ogg" id="9_8pln6"]
 
 [sub_resource type="FontVariation" id="FontVariation_bk00v"]
 base_font = ExtResource("2_s8hj3")
@@ -190,6 +191,9 @@ cancel_button_text = "   Ne   "
 
 [node name="Transition" parent="." instance=ExtResource("4_eq0on")]
 layout_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8pln6")
 
 [connection signal="pressed" from="SafeArea/VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="SafeArea/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
