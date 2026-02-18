@@ -78,7 +78,7 @@ theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("6_p4rmm")
 theme_override_font_sizes/font_size = 40
-text = "Započni igru"
+text = "Nazad"
 
 [node name="Transition" parent="." instance=ExtResource("4_bwiyv")]
 
