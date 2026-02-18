@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwal5n0wmh1pu"]
+
+[ext_resource type="PackedScene" uid="uid://dn08co5ynp3k3" path="res://art/models/artifacts/Polica.glb" id="1_l3gvg"]
+[ext_resource type="Texture2D" uid="uid://b6ubj3tcro1ah" path="res://art/models/artifacts/wood.jpg" id="2_41gbo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ariyn"]
+albedo_texture = ExtResource("2_41gbo")
+
+[node name="Polica2" instance=ExtResource("1_l3gvg")]
+
+[node name="Polica" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ariyn")

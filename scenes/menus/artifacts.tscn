@@ -1,3 +1,85 @@
-[gd_scene format=3 uid="uid://bxq3a0ggmeee4"]
+[gd_scene load_steps=9 format=3 uid="uid://c0lb6uk1hqfui"]
+
+[ext_resource type="Script" uid="uid://rapss7jjjteq" path="res://scripts/artifacts.gd" id="1_6lwnh"]
+[ext_resource type="PackedScene" uid="uid://dwal5n0wmh1pu" path="res://art/models/artifacts/polica_2.tscn" id="1_58h58"]
+[ext_resource type="PackedScene" uid="uid://bi6ycu1u28p6o" path="res://art/models/lvl1_boginja/boginja.tscn" id="2_gv85t"]
+[ext_resource type="Texture2D" uid="uid://c8ayd46c6kksn" path="res://art/Poliigon_WoodVeneerOak_7760_BaseColor.png" id="4_501ug"]
+[ext_resource type="PackedScene" uid="uid://cs6efgn7g5xw8" path="res://scenes/transition.tscn" id="4_bwiyv"]
+[ext_resource type="Theme" uid="uid://drva4s8rc2ped" path="res://themes/buttons.tres" id="5_nddn3"]
+[ext_resource type="FontFile" uid="uid://dis6novfppie8" path="res://fonts/Inria_Serif/InriaSerif-Regular.ttf" id="6_p4rmm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gv85t"]
+radius = 1.76401
+height = 7.52233
 
 [node name="Artifacts" type="Node3D"]
+script = ExtResource("1_6lwnh")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63582, 4.46798)
+
+[node name="Polica2" parent="." instance=ExtResource("1_58h58")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.881608, 0.471982, 0, -0.471982, 0.881608, 0, 1.80586, 6.36543)
+
+[node name="1" parent="." instance=ExtResource("2_gv85t")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -1.94804, 1.68082, 0.00176477)
+visible = false
+
+[node name="Area3D" type="Area3D" parent="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.567488, 0)
+shape = SubResource("CapsuleShape3D_gv85t")
+
+[node name="Top" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 0.104167
+offset_bottom = -0.000236511
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="Top"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_501ug")
+
+[node name="Seperator" type="HBoxContainer" parent="Top/Background"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_right = 400.0
+offset_bottom = 40.0
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="Top/Background/Seperator"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("5_nddn3")
+theme_override_colors/font_disabled_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_focus_color = Color(0.211765, 0.184314, 0.176471, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("6_p4rmm")
+theme_override_font_sizes/font_size = 40
+text = "Započni igru"
+
+[node name="Transition" parent="." instance=ExtResource("4_bwiyv")]
+
+[connection signal="pressed" from="Top/Background/Seperator/Start" to="." method="_on_start_pressed"]
