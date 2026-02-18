@@ -1,6 +1,6 @@
 extends Node
 
-@export var max_selected := 6
+@export var max_selected := 5
 @export var correct_items: Array[String] = [] 
 @onready var camera: Camera3D = $"../../Camera3D"
 @onready var level = $"../../.."
